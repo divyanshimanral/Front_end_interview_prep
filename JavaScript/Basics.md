@@ -23,5 +23,47 @@
 
     1. Browser APIs are built into your web browser, and are able to expose data from the surrounding computer environment, or do useful complex things. eg., DOM, Geolocation API, Canvas, WebGL, Audio and Video API's.
 
-    2. Third party APIs are not built into the browser by default, and you generally have to grab their code and information from somewhere on the Web. 
+    2. Third party APIs are not built into the browser by default, and you generally have to grab their code and information from somewhere on the Web.
        e.g., Twitter API, Yotube API and many more.
+
+## What are promises in js?
+
+Promises in JavaScript are a mechanism for handling asynchronous operations, such as fetching data from a server, reading a file, or waiting for a timeout to complete. Promises provide a cleaner and more structured way to work with asynchronous code compared to traditional callbacks.
+
+A Promise represents a value that might not be available yet but will be at some point in the future. It can be in one of three states:
+
+1. Pending: The initial state of a promise. It represents an operation that hasn't completed yet.
+
+2. Fulfilled (Resolved): The promise has successfully completed, and a result value is available.
+
+3. Rejected: The promise has encountered an error or failure, and an error reason is available.
+
+Promises have two built-in methods, then() and catch(), for handling the results and errors of asynchronous operations:
+
+- The then() method is used to handle the fulfillment of a promise (when it's resolved). It takes two optional callback functions: one for the success case (when resolve is called) and one for the error case (when reject is called).
+
+- The catch() method is used to handle any errors that occur during the promise's execution. It's essentially a shorthand for then(null, errorHandlingFunction)
+
+```
+const fetchData = () => {
+return new Promise((resolve, reject) => {
+ setTimeout(() => {
+   const randomValue = Math.random();
+   if (randomValue < 0.5) {
+     resolve('Data fetched successfully');
+   } else {
+     reject('Error: Data fetch failed');
+   }
+ }, 1000);
+});
+};
+
+fetchData()
+ .then((result) => {
+   console.log(result); // Success: Data fetched successfully
+ })
+ .catch((error) => {
+   console.error(error); // Error: Data fetch failed
+ });
+
+```
