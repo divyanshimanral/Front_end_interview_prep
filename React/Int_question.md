@@ -1,11 +1,16 @@
 # ReactJs
 
-ReactJs is a popular JavaScript library for building user interfaces. It is maintained by Facebook, and is widely used for building web applications, mobile apps, and other user interfaces. React allows developers to create reusable components, which can help make large applications easier to manage and maintain. It is designed to be efficient, declarative, and flexible, and can be used to create complex, dynamic user interfaces. 0. What is React?
+ReactJs is a popular JavaScript library for building user interfaces. It is maintained by Facebook, and is widely used for building web applications, mobile apps, and other user interfaces. React allows developers to create reusable components, which can help make large applications easier to manage and maintain. It is designed to be efficient, declarative, and flexible, and can be used to create complex, dynamic user interfaces.
+
+0. What is React?
+
+**efficent**: React is like a smart worker that doesn't waste time doing unnecessary tasks. It efficiently updates only the parts of a web page that need to change, rather than redrawing the entire page. This makes your web applications run faster and use less computer power.
+**declarative**:React lets you describe what you want your web page to look like, and it takes care of figuring out how to make it happen. It's like giving instructions and letting React handle the details. This makes your code easier to understand and maintain.
+**flexible**: React doesn't force you to do things in a specific way. It gives you the freedom to organize your code the way that makes the most sense for your project. You can use other libraries and tools alongside React, making it adaptable to various situations.
 
 - Reactjs is widely used javascript library for that was launched in 2011, maintined by facebook and is highly used for front-end development.
 - React uses component-based apporach which ensures to help you build components that possess high reusablity.
 - React is widely know for developing and desigining complex mobile user interfaces and web applications.
-
 
 1. How does React work?
 
@@ -13,105 +18,129 @@ React creates a virtual DOM. When the state changes in a component it first runs
 
 2. What are the advantages of using React?
 
-- **Easy Component Rendering**: React makes it simple to understand how things appear on a web page. Imagine it's like following a recipe – you look at the "render" function to see how a part of your webpage is created.
-- **Readable Code with JSX**: React uses something called JSX, which is like a special way of writing code. It's a bit like using plain language to describe what you want on your webpage. This makes your code easy to read and understand, like reading a story.
-- You can render React on the server side. This improves SEO and performance.
-- It is easy to test.
-- You can use React with any framework you wish as it is only a view layer.
+   - **Easy Component Rendering**: React makes it simple to understand how things appear on a web page. Imagine it's like following a recipe – you look at the "render" function to see how a part of your webpage is created.
+   - **Readable Code with JSX**: React uses something called JSX, which is like a special way of writing code. It's a bit like using plain language to describe what you want on your webpage. This makes your code easy to read and understand, like reading a story.
+   - You can render React on the server side. This improves SEO and performance.
+   - It is easy to test.
+   - You can use React with any framework you wish as it is only a view layer.
 
 In a nutshell, React is a helpful tool for building web pages because it makes your code easy to understand, helps your website load faster, and plays nicely with other tools you might want to use
 
-3. What is the difference between a Presentational component and a Container component?
+2.  What are the diadvantages of using React?
+    There are some liitations of react that are:
 
-Presentational components are concerned with how things look. They generally receive data and callbacks exclusively via props. These components rarely have their own state, but when they do it generally concerns UI state, as opposed to data state.
-When your component just receives props and renders them to the page, this is a stateless component, for which a pure function can be used. These are also called dumb components or presentational components.
-Container components are more concerned with how things work. These components provide the data and behavior to presentational or other container components. They define actions and provide these as callbacks to the presentational components. They are also often stateful as they serve as data sources.
+    - Writing code is complicated as it uses JSX and inline templating formatting.
+    - Beginners might find it hard to cope with the syntax and methods.
+    - The library contains a huge repository of information, which might be overwhelming
+    - React is a simple library and not a complete framework hence calls for dependencies
 
-4. What are the differences between a class component and functional component?
+3.  What the difference between Angular and react?
 
-- The class component uses ES6 class syntax, and it extends React components with a render method that returns React elements.
+    | FACTORS | ANGUALR | REACT |
 
-- Functional components with hooks are purely JavaScript functions that also return React elements. Before the introduction of hooks, functional components were stateless.
+    |----------|----------|----------|
 
-5. What is the difference between state and props?
+    | Created by | Google | Facebook |
 
-State is a data structure that starts with a default value when a Component mounts. It may be mutated across time, mostly as a result of user events.
+    | DOM| Real DOM | Virtual DOM |
 
-Props (short for properties) are a Component's configuration. They are received from above and immutable as far as the Component receiving them is concerned. A Component cannot change its props, but it is responsible for putting together the props of its child Components. Callback functions can also be passed in as props.
+    |Render support | Client side | Server side |
 
-6. What are the different lifecycle methods?
+    |Archiecture | Full MVS support | only view aspect of MVC |
 
-- componentWillMount (deprecated) - this is most commonly used for App configuration in your root component.
-- componentDidMount - here you want to do all the setup you couldn’t do without a DOM, and start getting all the data you need. Also if you want to set up eventListeners etc. this lifecycle hook is a good place to do that.
-- componentWillReceiveProps (deprecated) - this lifecyclye acts on particular prop changes to trigger state transitions.
-- shouldComponentUpdate - if you’re worried about wasted renders shouldComponentUpdate is a great place to improve performance as it allows you to prevent a rerender if component receives new prop. shouldComponentUpdate should always return a boolean and based on what this is will determine if the component is rerendered or not.
-- componentWillUpdate (deprecated) - rarely used. It can be used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate (but no access to previous props).
-- componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
-- componentWillUnmount - enables you can cancel any outgoing network requests, or remove all event listeners associated with the component.
+    |Data Binding | Unidirectional data binding | Two-way data binding |
 
-  1. componentDidMount: This method is called after a component is first rendered on the screen. It's a good place to set things up that require the DOM (the webpage) to be ready. For instance, if you want to fetch data from a server when your component loads, you can do it here.
+4.  What is the difference between a Presentational component and a Container component?
 
-  ```class MyComponent extends React.Component {
-  componentDidMount() {
-    // This code will run after the component is displayed on the screen.
-    // You can fetch data or set up things that rely on the DOM here.
-   }
+    Presentational components are concerned with how things look. They generally receive data and callbacks exclusively via props. These components rarely have their own state, but when they do it generally concerns UI state, as opposed to data state.
+    When your component just receives props and renders them to the page, this is a stateless component, for which a pure function can be used. These are also called dumb components or presentational components.
+    Container components are more concerned with how things work. These components provide the data and behavior to presentational or other container components. They define actions and provide these as callbacks to the presentational components. They are also often stateful as they serve as data sources.
 
-  render() {
-    // Your component's UI goes here.
-   }
+5.  What are the differences between a class component and functional component?
+
+    - The class component uses ES6 class syntax, and it extends React components with a render method that returns React elements.
+
+    - Functional components with hooks are purely JavaScript functions that also return React elements. Before the introduction of hooks, functional components were stateless.
+
+6.  What is the difference between state and props?
+
+    State is a data structure that starts with a default value when a Component mounts. It may be mutated across time, mostly as a result of user events.
+
+    Props (short for properties) are a Component's configuration. They are received from above and immutable as far as the Component receiving them is concerned. A Component cannot change its props, but it is responsible for putting together the props of its child Components. Callback functions can also be passed in as props.
+
+7.  What are the different lifecycle methods?
+
+    - componentWillMount (deprecated) - this is most commonly used for App configuration in your root component.
+    - componentDidMount - here you want to do all the setup you couldn’t do without a DOM, and start getting all the data you need. Also if you want to set up eventListeners etc. this lifecycle hook is a good place to do that.
+    - componentWillReceiveProps (deprecated) - this lifecyclye acts on particular prop changes to trigger state transitions.
+    - shouldComponentUpdate - if you’re worried about wasted renders shouldComponentUpdate is a great place to improve performance as it allows you to prevent a rerender if component receives new prop. shouldComponentUpdate should always return a boolean and based on what this is will determine if the component is rerendered or not.
+    - componentWillUpdate (deprecated) - rarely used. It can be used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate (but no access to previous props).
+    - componentDidUpdate - also commonly used to update the DOM in response to prop or state changes.
+    - componentWillUnmount - enables you can cancel any outgoing network requests, or remove all event listeners associated with the component.
+
+8.  componentDidMount: This method is called after a component is first rendered on the screen. It's a good place to set things up that require the DOM (the webpage) to be ready. For instance, if you want to fetch data from a server when your component loads, you can do it here.
+
+```class MyComponent extends React.Component {
+componentDidMount() {
+  // This code will run after the component is displayed on the screen.
+  // You can fetch data or set up things that rely on the DOM here.
+ }
+
+render() {
+  // Your component's UI goes here.
+ }
+}
+```
+
+2. shouldComponentUpdate: This method helps in optimizing performance. It decides whether or not a component should re-render when it receives new props or state. If it returns true, the component will re-render; if false, it won't.
+
+```
+class MyComponent extends React.Component {
+shouldComponentUpdate(nextProps, nextState) {
+  // You can check the incoming props and state and decide if you want to re-render.
+  if (this.props.someValue !== nextProps.someValue) {
+    return true; // Re-render if 'someValue' changes.
   }
-  ```
+  return false; // Don't re-render otherwise.
+ }
 
-  2. shouldComponentUpdate: This method helps in optimizing performance. It decides whether or not a component should re-render when it receives new props or state. If it returns true, the component will re-render; if false, it won't.
+render() {
+  // Your component's UI goes here.
+ }
+}
 
-  ```
-  class MyComponent extends React.Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    // You can check the incoming props and state and decide if you want to re-render.
-    if (this.props.someValue !== nextProps.someValue) {
-      return true; // Re-render if 'someValue' changes.
-    }
-    return false; // Don't re-render otherwise.
-   }
+```
 
-  render() {
-    // Your component's UI goes here.
-   }
+3. componentDidUpdate: This is called after a component has re-rendered. It's commonly used to update the DOM or do other tasks when the component's data changes.
+
+```
+class MyComponent extends React.Component {
+componentDidUpdate(prevProps, prevState) {
+  // This code runs after the component re-renders.
+  // You can perform actions based on the previous props and state here.
+ }
+
+render() {
+  // Your component's UI goes here.
+ }
+}
+
+```
+
+4. componentWillUnmount: This method is called just before a component is removed from the screen. It's a good place to clean up things like canceling network requests or removing event listeners to prevent memory leaks.
+
+```
+class MyComponent extends React.Component {
+componentWillUnmount() {
+  // This code runs right before the component is removed from the screen.
+  // You can clean up resources like event listeners here.
   }
 
-  ```
-
-  3. componentDidUpdate: This is called after a component has re-rendered. It's commonly used to update the DOM or do other tasks when the component's data changes.
-
-  ```
-  class MyComponent extends React.Component {
-  componentDidUpdate(prevProps, prevState) {
-    // This code runs after the component re-renders.
-    // You can perform actions based on the previous props and state here.
-   }
-
-  render() {
-    // Your component's UI goes here.
-   }
+render() {
+  // Your component's UI goes here.
   }
-
-  ```
-
-  4. componentWillUnmount: This method is called just before a component is removed from the screen. It's a good place to clean up things like canceling network requests or removing event listeners to prevent memory leaks.
-
-  ```
-  class MyComponent extends React.Component {
-  componentWillUnmount() {
-    // This code runs right before the component is removed from the screen.
-    // You can clean up resources like event listeners here.
-    }
-
-  render() {
-    // Your component's UI goes here.
-    }
-  }
-  ```
+}
+```
 
 7. Explain React Hooks.
    Hooks let you use more of React’s features without having to use classes. The first hook that you will most likely encounter is useState. useState is a Hook that lets you add React state to function components. It returns an array with a getter and a setter.
