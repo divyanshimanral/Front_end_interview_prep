@@ -1,8 +1,8 @@
 # What is event loop in javascript?
 
-**Javascript is a single threaded, non-blocking, asynchronous and concurrent. It has a call stack, a heap, an event loop, a callback queue and some other api's and stuff**
+**Javascript is a single threaded, non-blocking, asynchronous and concurrent language. It has a call stack, a heap, an event loop, a callback queue and some other api's and stuff**
 
-<h3 style="color: yellow; text-align: center;">the call stack (single threaded programming language)</h3>
+<h3 style="color: yellow; text-align: center;">One call stack (single threaded programming language)</h3>
 
 **<h3 style="color: red; text-align:center;">one thread == one call stack == one thing at a time</h3>**
 

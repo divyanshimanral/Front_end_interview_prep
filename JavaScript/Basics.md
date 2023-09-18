@@ -106,11 +106,7 @@ greeting("Alice"); // Outputs: "Hello, Alice"
 # Describe the concept of hoisting in JavaScript.
 
 - **Definition**: Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their containing scope during the compile phase.
-
-```
-console.log(a); // Outputs: undefined
-var a = 5;
-```
+- Example: ` console.log(a); // Outputs: undefined   var a = 5;`
 <hr style="background-color: red";/>
 
 # What is the difference between == and === in JavaScript?
@@ -143,7 +139,7 @@ person.greet(); // Outputs: "Hello, Alice!"
 <hr style="background-color: red";/>
 
 # How do you create an array in JavaScript?
-- Definition: Arrays in JavaScript can be created using square brackets [] and can hold a collection of values.
+- Definition: Arrays in JavaScript can be created using square brackets [ ] and can hold a collection of values.
 - Example: `const numbers = [1, 2, 3];`
 
 <hr style="background-color: red";/>
@@ -309,10 +305,7 @@ increment(); // Outputs: 2
 
 # What are arrow functions, and how do they differ from regular functions?
 - **Definition**: Arrow functions are a concise way to write anonymous functions in JavaScript. They differ from regular functions in how they handle this, have no arguments object, and cannot be used as constructors.
-- Examples:
-```
-const add = (a, b) => a + b;
-```
+- Examples: `const add = (a, b) => a + b;`
 <hr style="background-color: red";/>
 
 # How does JavaScript handle memory management, and what is garbage collection?
