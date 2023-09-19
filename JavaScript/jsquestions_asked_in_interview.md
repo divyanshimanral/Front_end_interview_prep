@@ -33,8 +33,11 @@ In this code, "Start" and "End" will be logged immediately because they are sync
 
 Understanding the event loop is crucial for writing responsive and non-blocking JavaScript code, especially in scenarios where you need to handle user interactions, network requests, or other asynchronous operations.
 
+<div  style="display: flex; align-item:center; justify-content:center;">
 <img src="https://miro.medium.com/v2/resize:fit:828/1*iHhUyO4DliDwa6x_cO5E3A.gif" />
+</div>
 
+<br>
 <hr style="background-color: red";/>
 
 # Everything you need to know about Promises
@@ -207,7 +210,6 @@ Promises provide a clean and readable way to work with asynchronous code in Java
 
 <hr style="background-color: red";/>
 
-
 # How does javascript works?
 
 JavaScript is a versatile and powerful programming language used for web development.
@@ -232,6 +234,7 @@ function bar() {
 
 bar();
 ```
+
 In this example, the call stack looks like this:
 
 1. bar() is pushed onto the stack.
@@ -239,13 +242,14 @@ In this example, the call stack looks like this:
 3. foo() returns and is popped off the stack.
 4. bar() continues and logs its message, then returns and is popped off the stack.
 
-3. **Memory Heap**
+5. **Memory Heap**
 
 The memory heap is where objects, variables, and function closures are stored. Objects created in JavaScript are allocated memory on the heap.
 
 ```
 const myObject = { name: "John", age: 30 };
 ```
+
 myObject is stored on the memory heap.
 
 4. **Event Loop**
@@ -261,7 +265,7 @@ The event loop checks if the call stack is empty. If it is, it takes the first t
 
 Callbacks and promises are used for asynchronous programming in JavaScript.
 
-- ***Callbacks***: Functions that are passed as arguments to other functions and are executed when a task is complete.
+- **_Callbacks_**: Functions that are passed as arguments to other functions and are executed when a task is complete.
 
 ```
 function fetchData(url, callback) {
@@ -273,7 +277,7 @@ fetchData("https://api.example.com/data", (data) => {
 })
 ```
 
-- ***Promises***: Objects representing a future value. They are more structured and provide a cleaner way to handle asynchronous operations.
+- **_Promises_**: Objects representing a future value. They are more structured and provide a cleaner way to handle asynchronous operations.
 
 ```
 function fetchData(url) {
@@ -318,7 +322,3 @@ JavaScript uses automatic memory management (garbage collection) to reclaim memo
 ES6 (ECMAScript 2015) introduced several important features to JavaScript, including arrow functions, classes, template literals, destructuring, and more. Familiarity with ES6 features is essential for modern JavaScript development.
 
 <hr style="background-color: red";/>
-
-
-
-
