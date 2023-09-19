@@ -1,3 +1,11 @@
+# Everything about different features of React:
+- Virtual DOM: 
+React utilizes virtual DOM, an in-memory representation of the actual browser DOM. When the state of a component changes, React creates a new virtual DOM representation and compares it with the previous one. (To increase performance)
+- View-oriented: React is primarily concered with the view layer of an application. It provides a declarative way to build UI components and manages the rendering of those components directly.
+- Unidirectional data flow: React follows a uni-directional data flow, where the data flows in a single direction from parent to child components. This promotes a predictable and easier-to-manage data flow and helps in debugging and understanding the application's state.
+- Component-based: React encourages a component based architecture, where UIs are broken down into modular and reusable components. Components can be composed and nested to create complex UI structure.
+<hr style="background-color: red";/>
+
 # Everything you need to know about useEffect hook.
 
 The useEffect hook is a fundamental part of React, a popular JavaScript library for building user interfaces. It's used for handling side effects in functional components. Side effects can include data fetching, DOM manipulation, setting up subscriptions, and more.
