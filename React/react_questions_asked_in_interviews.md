@@ -1,9 +1,40 @@
 # Everything about different features of React:
-- Virtual DOM: 
-React utilizes virtual DOM, an in-memory representation of the actual browser DOM. When the state of a component changes, React creates a new virtual DOM representation and compares it with the previous one. (To increase performance)
+
+- Virtual DOM:
+  React utilizes virtual DOM, an in-memory representation of the actual browser DOM. When the state of a component changes, React creates a new virtual DOM representation and compares it with the previous one. (To increase performance)
 - View-oriented: React is primarily concered with the view layer of an application. It provides a declarative way to build UI components and manages the rendering of those components directly.
 - Unidirectional data flow: React follows a uni-directional data flow, where the data flows in a single direction from parent to child components. This promotes a predictable and easier-to-manage data flow and helps in debugging and understanding the application's state.
 - Component-based: React encourages a component based architecture, where UIs are broken down into modular and reusable components. Components can be composed and nested to create complex UI structure.
+
+<hr style="background-color: red";/>
+
+# What is virtual DOM?
+
+<div style="display:'flex'; align-item:'center';">
+<img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*sWfjl94Bnshi1kewFCL0gg.png"/>
+</div>
+
+The Virtual DOM is an abstraction of the Real DOM, created and maintained by JavaScript libraries such as React. The Virtual DOM is a lightweight copy of the Real DOM, which allows for faster updates and improved performance. When a user interacts with a web page, React updates the Virtual DOM, compares it with the previous version, and only updates the Real DOM with the necessary changes. This process is known as Reconciliation.
+<a href="https://medium.com/@surksha8/virtual-dom-and-real-dom-understanding-the-differences-da8f3fab4261">for more </a>
+
+- Finally, the Virtual DOM is highly flexible and can be used with any programming language that can run JavaScript. In contrast, the Real DOM is tightly coupled with the browser and can only be manipulated using JavaScript.
+
+- Data reconcilation is represented as a phase of verification of records during data migration. In this phase, target data is compared with source information to provide that the migration structure is assigned data.
+
+<hr style="background-color: red";/>
+
+# What is prop and state?
+
+- Prop is read-only data that is passed from parent to child component and whenever there is a change in the properties, or props, the child re-renders.
+- The state is internal to a component. When you make a change in state there is a change in that component. However it also happens that you pass the state as a prop (since States are transferred as prop from parent) to the child component so on the state change child component also get re-rendered.
+<hr style="background-color: red";/>
+
+# Differentiate between Server and client Side rendering in react?
+- It simply means that in React, you can render your entire HTML (the entire markup) to the server-side without coming to the client. Even though the whole markup is written in JavaScript, you donot need to come in the client. You can render it to the server-side through the Node.js engine. Now, What's its benefits? It helps in getting better SEO, and the first render in which you can see whole visual, is very fast. This is used in website where the data is heavy and whenever SEO friendlyness is necessary, like e-commerce, news websites, whenever there are such a website running in React, which are content heavy, in there server side rendering becomes necessary. You can see client side rendering like in Outlook is an app, like teams, slack, like figma. In all these examples, you donot need sever-side rendering because all the data can come to the client and be rendered well. And SEO is not required in this, this is not content heavy and it is very much personalized. Theres is no SEO channeling on your email. So client side rendering is for app and server side rendering is for data heavy websites is what we go with when we use react.
+<hr style="background-color: red";/>
+
+# What is refs in react?
+- react makes its own DOM and you can not directly access the DOM. Whatever you have to change in it, you do it through state or props, through data, not directly accessing. But somewhere, like a thing to put focus on an input element somewhere you need to access it directly. Its like getElementById
 <hr style="background-color: red";/>
 
 # Everything you need to know about useEffect hook.
@@ -98,6 +129,7 @@ useEffect(() => {
   // e.g., updating a chart based on 'count'
 }, [count]);
 ```
+
 - **Subscriptions**: Setting up and tearing down subscriptions or event listeners.
 
 ```
@@ -151,6 +183,7 @@ useEffect(() => {
   fetchData();
 }, []);
 ```
+
 Understanding useEffect and its various use cases is essential for building robust and responsive React applications.
 
 <hr style="background-color: red";/>
@@ -194,6 +227,7 @@ function ChildComponentA({ data }) {
 
 export default ChildComponentA;
 ```
+
 ```
 // ChildComponentB.js
 import React from 'react';
@@ -209,6 +243,7 @@ function ChildComponentB({ data }) {
 
 export default ChildComponentB;
 ```
+
 ```
 // ChildComponentC.js
 import React from 'react';
@@ -350,26 +385,26 @@ class MyComponent extends Component {
 
 React components are unique because they promote a declarative and reusable approach to building user interfaces. Here's why they stand out:
 
-1. ***Declarative***: React components allow you to declare what the UI should look like based on the current state and props, rather than imperatively manipulating the DOM.
+1. **_Declarative_**: React components allow you to declare what the UI should look like based on the current state and props, rather than imperatively manipulating the DOM.
 
-2. ***Reusability***: Components can be reused across different parts of your application, reducing redundancy in your code.
+2. **_Reusability_**: Components can be reused across different parts of your application, reducing redundancy in your code.
 
-3. ***Composability***: You can easily compose small, focused components to create complex UIs, promoting modularity and maintainability.
+3. **_Composability_**: You can easily compose small, focused components to create complex UIs, promoting modularity and maintainability.
 
-4. ***One-Way Data Flow***: React enforces a one-way data flow, making it easier to understand how data changes propagate through your application.
+4. **_One-Way Data Flow_**: React enforces a one-way data flow, making it easier to understand how data changes propagate through your application.
 
 ## Benefits of Using React Components
 
-1. ***Modularity***: Components promote code modularity, making it easier to develop, test, and maintain code
+1. **_Modularity_**: Components promote code modularity, making it easier to develop, test, and maintain code
 
-2. ***Reusability***: Reusable components reduce development time and help maintain consistent UI patterns across an application.
+2. **_Reusability_**: Reusable components reduce development time and help maintain consistent UI patterns across an application.
 
-3. ***Abstraction***: Components abstract away complex DOM manipulations and provide a higher-level interface for building UIs.
+3. **_Abstraction_**: Components abstract away complex DOM manipulations and provide a higher-level interface for building UIs.
 
-4. ***State Management***: Class components allow you to manage state, enabling dynamic and interactive user interfaces.
+4. **_State Management_**: Class components allow you to manage state, enabling dynamic and interactive user interfaces.
 
-5. ***Ecosystem***: React has a vast ecosystem of libraries, tools, and resources to enhance component development. 
+5. **_Ecosystem_**: React has a vast ecosystem of libraries, tools, and resources to enhance component development.
 
-React components are the building blocks of a React application, and they play a crucial role in creating maintainable, modular, and reusable user interfaces. 
+React components are the building blocks of a React application, and they play a crucial role in creating maintainable, modular, and reusable user interfaces.
 
 <hr style="background-color: red";/>
