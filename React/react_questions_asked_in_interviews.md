@@ -26,14 +26,198 @@ The Virtual DOM is an abstraction of the Real DOM, created and maintained by Jav
 # What is prop and state?
 
 - Prop is read-only data that is passed from parent to child component and whenever there is a change in the properties, or props, the child re-renders.
+  Here's a list of common data types and values that can be passed as props in React:
+
+1.  **Primitives**:
+
+    - Strings
+    - Numbers
+    - Booleans
+
+    `<MyComponent name="John" age={30} isActive={true} />`
+
+2.  **Functions**:
+
+    - You can pass functions as props to allow child components to communicate with and invoke functions in their parent components.
+
+    `<Button onClick={handleClick} />`
+
+3.  **Objects:**
+
+    - JavaScript objects can be passed as props, allowing you to send complex data structures to child components.
+
+    `<PersonInfo person={{ name: "Alice", age: 25 }} />`
+
+4.  **Arrays:**
+
+    - Arrays of data can be passed as props when you want to send lists or collections of items to child components.
+
+    `<ItemList items={['item1', 'item2', 'item3']} />`
+
+5.  **React Elements:**
+
+    - You can pass React elements (components) as props to other components, allowing for the composition of complex user interfaces.
+
+    `<Modal content={<CustomComponent />} />`
+
+6.  **Children (Special Prop):** - The children prop is a special prop that allows you to pass and render child elements or components within a parent component.
+
+        ```
+
+    <Container>
+      <Header />
+      <Content />
+    </Container>
+    ```
+
+7.  **Custom Data:**
+
+- You can pass custom data types, such as enums or constants, as props to provide configuration or specific behavior to child components.
+  `<FilteredList data={data} filterType={FilterTypes.DATE} />`
+
+8. **Functions as Props (Callback Props):**
+
+- You can pass callback functions as props to child components to allow them to send data or trigger actions in the parent component.
+
+```
+<UserForm onSubmit={handleSubmit} />
+```
+
+9. **Conditional Props:**
+
+- You can pass props conditionally based on certain criteria or logic, allowing child components to adapt their behavior or appearance.
+
+```
+<Notification type={unread ? 'new' : 'read'} />
+```
+
+10. **Props from State:**
+
+- Props can also be derived from the state of a parent component and passed down to child components.
+
+```
+const { username, email } = this.state;
+return <UserProfile username={username} email={email} />;
+```
+
+In React, props provide a way to make your components reusable and configurable. They allow you to create a hierarchy of components where data and behavior can be effectively passed down the component tree, promoting a modular and maintainable code structure.
+
+<br>
+
 - The state is internal to a component. When you make a change in state there is a change in that component. However it also happens that you pass the state as a prop (since States are transferred as prop from parent) to the child component so on the state change child component also get re-rendered.
 <hr style="background-color: red";/>
 
 # Differentiate between Server and client Side rendering in react?
+
 - It simply means that in React, you can render your entire HTML (the entire markup) to the server-side without coming to the client. Even though the whole markup is written in JavaScript, you donot need to come in the client. You can render it to the server-side through the Node.js engine. Now, What's its benefits? It helps in getting better SEO, and the first render in which you can see whole visual, is very fast. This is used in website where the data is heavy and whenever SEO friendlyness is necessary, like e-commerce, news websites, whenever there are such a website running in React, which are content heavy, in there server side rendering becomes necessary. You can see client side rendering like in Outlook is an app, like teams, slack, like figma. In all these examples, you donot need sever-side rendering because all the data can come to the client and be rendered well. And SEO is not required in this, this is not content heavy and it is very much personalized. Theres is no SEO channeling on your email. So client side rendering is for app and server side rendering is for data heavy websites is what we go with when we use react.
+
+<hr>
+
+- Server-side rendering (SSR) and client-side rendering (CSR) are two approaches to rendering web pages in React applications. They differ in how and when the rendering process occurs.
+
+**Server-Side Rendering (SSR):**
+
+- In SSR, the initial rendering of the web page is done on the server side, and a fully formed HTML page is sent to the client's browser. This means that when the user first accesses a web page, they receive a fully rendered page from the server, which includes content and markup.
+
+**Advantages of SSR:**
+
+1. **_Improved SEO_**: Search engines can crawl and index SSR pages more easily because the content is present in the initial HTML response.
+
+2. **_Faster Initial Load_**: Users see content sooner because the server sends a complete HTML page.
+
+3. **_Performance on Low-End Devices_**: SSR can be more performant on low-end devices because less client-side processing is required.
+
+Example of Server-Side Rendering:
+
+```
+// Server-side code
+const express = require('express');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+const App = require('./App');
+
+const app = express();
+
+app.get('/', (req, res) => {
+  const html = ReactDOMServer.renderToString(<App />);
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>SSR Example</title>
+      </head>
+      <body>
+        <div id="root">${html}</div>
+      </body>
+    </html>
+  `);
+});
+
+// Client-side code
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello, SSR!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Client-Side Rendering (CSR):**
+
+- In CSR, the initial HTML page sent from the server is minimal and typically includes JavaScript bundles. The actual rendering of the content happens on the client side using JavaScript. This approach provides a more interactive and dynamic user experience because subsequent page updates do not require full-page reloads.
+
+**Advantages of CSR:**
+
+1. **_Fast Navigation_**: Once the initial page loads, navigation within the app is fast because only data needs to be fetched and components re-rendered, not the entire HTML page.
+
+2. **_Reduced Server Load_**: The server doesn't have to render full HTML pages for every request, reducing server load.
+
+**Example of Client-Side Rendering:**
+
+```
+// Server-side code (minimal HTML)
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>CSR Example</title>
+      </head>
+      <body>
+        <div id="root"></div>
+        <script src="/bundle.js"></script>
+      </body>
+    </html>
+  `);
+});
+
+// Client-side code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+**When to Use SSR vs. CSR:**
+
+- Use SSR when you need better SEO or want to optimize initial page load times.
+- Use CSR when you want to build highly interactive and dynamic web applications, and you're willing to accept the trade-offs of a potentially slower initial load.
+
+In some cases, a hybrid approach called "Server-Side Rendering with Client-Side Hydration" can be used, where SSR is employed initially, and then the client-side takes over for subsequent interactions, combining the benefits of both approaches.
+
 <hr style="background-color: red";/>
 
 # What is refs in react?
+
 - react makes its own DOM and you can not directly access the DOM. Whatever you have to change in it, you do it through state or props, through data, not directly accessing. But somewhere, like a thing to put focus on an input element somewhere you need to access it directly. Its like getElementById
 <hr style="background-color: red";/>
 
