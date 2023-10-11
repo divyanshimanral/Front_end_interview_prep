@@ -19,6 +19,10 @@
 
 - <span style="color:orange">**_Application Programming Interfaces (APIs)_**</span> provide you with extra superpowers to use in your code.
 
+  - API stands for Application Programming Interface. It is a set of rules and protocols that allows different software applications to communicate with each other. APIs define the methods and data formats that developers can use to interact with a service, library, or system, without having to understand the internal workings of that system.
+
+  - APIs serve as intermediaries that enable different software components to work together, allowing them to request and exchange data, perform specific functions, and integrate with other software systems.
+
   - APIs are ready-made sets of code building blocks that allow a developer to implement programs that would otherwise be hard or impossible to implement. They do the same thing for programming that ready-made furniture kits do for home building — it is much easier to take ready-cut panels and screw them together to make a bookshelf than it is to work out the design yourself, go and find the correct wood, cut all the panels to the right size and shape, find the correct-sized screws, and then put them together to make a bookshelf.
 
   - They generally fall into two categories.
@@ -31,6 +35,8 @@
 <hr style="background-color: red";/>
 
 ## What are promises in js?
+
+- Promises in JavaScript are objects with methods that allow you to interact with and manage asynchronous operations.
 
 Promises in JavaScript are a mechanism for handling asynchronous operations, such as fetching data from a server, reading a file, or waiting for a timeout to complete. Promises provide a cleaner and more structured way to work with asynchronous code compared to traditional callbacks.
 
@@ -107,7 +113,7 @@ greeting("Alice"); // Outputs: "Hello, Alice"
 
 # Describe the concept of hoisting in JavaScript.
 
-- **Definition**: Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their containing scope during the compile phase.
+- **Definition**: Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their containing scope during the compilation phase.
 - Example: ` console.log(a); // Outputs: undefined   var a = 5;`
 - Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase. It's important to understand that only the declarations are hoisted, not the initializations. The behavior can be different for var, let, and const, and it also applies to function declarations.
 - Let's explore hoisting with examples for each case:
@@ -278,6 +284,30 @@ doSomething(function() {
 
 - **Definition**: Event delegation is a technique where you attach a single event listener to a common ancestor of multiple elements, allowing you to handle events for multiple elements with a single handler.
 - Example: Instead of attaching a click event to each list item, you can attach it to the parent ul element and check which item was clicked.
+
+```
+<ul id="itemList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+</ul>
+
+// Get the common ancestor element (in this case, the <ul> element)
+const itemList = document.getElementById("itemList");
+
+// Add a single event listener to the <ul> element
+itemList.addEventListener("click", function (event) {
+  if (event.target.tagName === "LI") {
+    // Check if the clicked element is an <li> element
+    // You can now access the text content of the clicked item and perform an action
+    const clickedItemText = event.target.textContent;
+    alert("You clicked: " + clickedItemText);
+  }
+});
+
+```
 
 <hr style="background-color: red";/>
 
