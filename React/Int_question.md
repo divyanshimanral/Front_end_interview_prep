@@ -250,8 +250,8 @@ Both Class and Functional Components serve the same purpose, but Functional Comp
     <table>
     <tr>
     <th>Comparison</th>
-    <th>Flux</th>
     <th>Redux</th>
+    <th>Flux</th>
     </tr>
     <tr>
     <td>Components</td>
