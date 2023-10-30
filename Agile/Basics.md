@@ -127,7 +127,4 @@ Scrum is a frameworl through which we build software product by following Agile 
 </tr>
 </table>
 
-<!-- ## <a href="https://www.interviewbit.com/agile-interview-questions/">For more checkout this website. This contains plenty of question on Agile</a> -->
-
-## <a href="../assets/Agile.pdf">For quick view</a>
-## <a href="../assets/agile/Agile_page-0001.jpg">For quick view</a>
+## <a href="https://www.interviewbit.com/agile-interview-questions/">For more checkout this website. This contains plenty of question on Agile</a>
